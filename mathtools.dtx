@@ -4520,6 +4520,14 @@ colorlinks,
     }{%
       \crcr\egroup\egroup\,%
     }
+%    \end{macrocode}
+% \changes{1.32}{2026/10/30}{Fix extra space when containing align-type environments}
+%    \begin{macrocode}
+    \let\MT_orig_start@aligned\start@aligned
+    \def\start@aligned{%
+      \let\math@cr@@\AMS@math@cr@@
+      \MT_orig_start@aligned%
+    }%
   }
 \else
 %    \end{macrocode}
@@ -4584,6 +4592,14 @@ colorlinks,
     }{%
       \crcr\egroup\egroup\,%
     }
+%    \end{macrocode}
+% \changes{1.32}{2026/10/30}{Fix extra space when containing align-type environments}
+%    \begin{macrocode}
+    \let\MT_orig_start@aligned\start@aligned
+    \def\start@aligned{%
+      \let\math@cr@@\AMS@math@cr@@
+      \MT_orig_start@aligned%
+    }%
   }
 \fi
 
